@@ -1,0 +1,65 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RTMP Relay Server</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>RTMP Relay Server</h1>
+            <p>Fallback solution for when Twitch streams go down</p>
+        </header>
+        
+        <div class="info-box">
+            <h2>How It Works</h2>
+            <p>This project creates a serverless RTMP relay that can be deployed to Vercel. When your Twitch stream goes down, viewers can be redirected here to continue watching.</p>
+        </div>
+
+        <div class="setup-section">
+            <h2>Setup Instructions</h2>
+            <ol>
+                <li>Download the project files</li>
+                <li>Upload to Vercel</li>
+                <li>Configure your streaming software to use the provided RTMP endpoint</li>
+                <li>Add this URL as a backup in your stream setup</li>
+            </ol>
+            
+            <button id="downloadBtn" class="download-btn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 16L12 8" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M9 13L12 16L15 13" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M8 20H16C18.2091 20 20 18.2091 20 16V8C20 5.79086 18.2091 4 16 4H8C5.79086 4 4 5.79086 4 8V16C4 18.2091 5.79086 20 8 20Z" stroke="white" stroke-width="2"/>
+                </svg>
+                Download Project Files
+            </button>
+        </div>
+
+        <div class="demo-section">
+            <h2>Live Demo</h2>
+            <div id="videoPlayer" class="video-player">
+                <div class="placeholder-player">
+                    <svg width="80" height="80" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="white" stroke-width="2"/>
+                        <path d="M9.5 8.5L16 12L9.5 15.5V8.5Z" stroke="white" stroke-width="2" stroke-linejoin="round"/>
+                    </svg>
+                    <p>Stream Preview</p>
+                </div>
+            </div>
+            <div class="status-indicator">
+                <span class="status-dot"></span>
+                <span id="streamStatus">Offline</span>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>RTMP Relay Server for Vercel • <a href="https://github.com/yourusername/rtmp-relay" target="_blank">GitHub</a></p>
+    </footer>
+
+    <script src="config.js" type="module"></script>
+    <script src="scripts.js" type="module"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"4c6229722a6346bc8eb5cb0e5eae5d41","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>
